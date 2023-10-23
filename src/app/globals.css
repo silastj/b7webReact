@@ -25,3 +25,34 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+button:disabled{
+  background-color: oldlace;
+  cursor:no-drop;
+}
+
+#footer{
+  margin-top: 900px;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 2px solid red;
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btnHeader{
+  border:1px solid red;
+  border-radius: 4px;
+}

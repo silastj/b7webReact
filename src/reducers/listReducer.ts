@@ -1,4 +1,4 @@
-import { Item } from "../types"
+import { Item } from "../components/List/types"
 
 type AddAction = {
   type: 'add';

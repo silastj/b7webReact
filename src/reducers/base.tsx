@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Item } from "../types"
+import { Item } from "../components/List/types"
 
 
 
