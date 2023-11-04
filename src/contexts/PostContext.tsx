@@ -1,6 +1,8 @@
 import { Post } from "@/components/types/Post";
 import { postReducer } from "@/reducers/postReducer";
-import { ReactNode, createContext, useReducer, useState } from "react";
+import { ReactNode, createContext, useReducer, useEffect } from "react";
+
+const STORAGE_KEY = 'postContextContent'
 
 export type PostContextType = {
   posts: Post[]
@@ -11,7 +13,11 @@ export type PostContextType = {
 export const PostContext = createContext<PostContextType | null>(null)
 
 export const PostProvider = ({children} : {children: ReactNode}) => {
-  const [posts, dispatch] = useReducer(postReducer, [])
+  const [posts, dispatch] = useReducer(postReducer, JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'))
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(posts))
+  }, [posts])
 
   const addPost = (title: string, body: string) => {
     dispatch({
@@ -28,3 +34,9 @@ export const PostProvider = ({children} : {children: ReactNode}) => {
     <PostContext.Provider value={{posts, addPost, removePost}}>{children}</PostContext.Provider>
   )
 }
+
+// PODEMOS CRIAR ESSE HOOK(usePosts) , maneiro para reduzir o code
+// E DIMINUIR AS CHAMADAS QUANDO FOR USAR O CONTEXT
+// IMPORT O useContext
+
+//export const usePosts = () => useContext(PostContext)

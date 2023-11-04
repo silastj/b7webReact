@@ -19,8 +19,9 @@ type PostActions = AddAction | RemoveAction
 export const postReducer = (posts: Post[], action: PostActions) => {
   switch(action.type) {
     case 'add':
+      const lastId = posts.length > 0 ? posts[posts.length - 1].id : 0
       return[...posts, {
-        id: posts.length,
+        id: lastId + 1,
         title: action.payload.title,
         body:action.payload.body
       }]

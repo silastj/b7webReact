@@ -3,8 +3,7 @@ import { useContext } from "react"
 
 
 const ResultadoPost = () => {
-  const postCtx = useContext(PostContext)
-  
+  const postCtx = useContext(PostContext)  
   return (
     <div>
       <p>Posts enviados:</p>

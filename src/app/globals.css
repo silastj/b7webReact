@@ -16,6 +16,30 @@
   }
 }
 
+h1{
+  font-size: 22px;
+}
+.text-white img,
+.text-black img{
+  background-color: white;
+}
+.text-white input,
+.text-white button,
+.text-white textarea {
+  background-color:black !important;
+  border:1px solid red;
+  padding: 4px 2px;
+}
+
+.text-black input,
+.text-black button,
+.text-black textarea {
+  background-color:black !important;
+  border:1px solid red;
+  color:white;
+  padding: 4px 2px;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

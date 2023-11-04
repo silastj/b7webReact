@@ -1,0 +1,35 @@
+.centerChat{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 400px;
+  min-height: 400px;
+  border: 1px solid blue;
+  border-radius: 8px;
+  position: relative;
+}
+
+.chat{
+  width: 100%;
+}
+
+.chat>p:nth-child(odd){
+  text-align: left;
+  margin: 10px;
+}
+
+.centerChat:nth-child(even){
+  text-align: right;
+  margin: 10px;
+}
+
+.footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer>input{
+  width: 100%;
+}
